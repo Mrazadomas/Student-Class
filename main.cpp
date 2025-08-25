@@ -1,5 +1,7 @@
 #include <iostream> 
 #include <cassert>
+#include <cstdlib> 
+#include <ctime>
 
 using namespace std;
 
@@ -7,6 +9,7 @@ class Student {
     private: 
     string first_name;
     string last_name;
+    int studentID;
 
     public: 
     
@@ -14,6 +17,8 @@ class Student {
     Student(string first, string last) {
         first_name = first;
         last_name = last;
+        studentID = rand() % 100; 
+
     }
 
     void setFirstName(string first) {
@@ -37,6 +42,10 @@ class Student {
 
     string getLast() {
         return last_name;
+    }
+
+    int getSID() {
+        return studentID;
     }
 };
 
@@ -62,6 +71,8 @@ int main() {
   student.setLastName("Jenkins");
 
   cout << student.getFirst() << " " << student.getLast() << endl;
+
+  cout << student.getSID() << endl;
  
   return 0;
 }
